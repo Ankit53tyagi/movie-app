@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.slick-prev, .slick-next {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 30px !important;
+  line-height: normal;
+  opacity: .75;
+}
+.slick-initialized .slick-slide{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.slick-dots{
+  left: 0;
+  right: 0;
+}

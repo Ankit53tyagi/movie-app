@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Listing from './Pages/Listing';
+import Details from './Pages/Details';
+import Header from './Components/Header';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Listing />} />
+          <Route path='/details/:id' element={<Details />} />
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
